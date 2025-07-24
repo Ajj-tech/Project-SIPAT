@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIPAT | Discover Northern Samar</title>
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header id="home">
+    <div class="overlay"></div>
+    <nav>
+      <div class="logo">SIPAT</div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#attractions">Attractions</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    </nav>
+    <div class="hero-text">
+      <h1>Discover Northern Samar</h1>
+      <p>Experience the hidden gems of SIPAT</p>
+    </div>
+  </header>
+
+  <!-- Detailed About Section -->
+  <section class="about-section" id="about">
+    <div class="about-image">
+      <img src="pic1.jpg" alt="Scenic Northern Samar">
+      <div class="play-overlay">▶️</div>
+    </div>
+    <div class="about-content">
+      <div class="small-label">ABOUT</div>
+      <h3>Discover Your Next Adventure</h3>
+      <p>
+        SIPAT is your gateway to the wild beauty of Northern Samar. From its
+        turquoise bays and dramatic cliffs to centuries‑old traditions and
+        thriving ecosystems, our expert guides will take you off the beaten
+        path for an unforgettable, sustainable journey.
+      </p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="number">20+</div>
+          <div class="label">years of experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="number">100+</div>
+          <div class="label">destination spots</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="attractions">
+    <h2>Top Attractions</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="pic1.jpg" alt="Kalanggaman Island">
+        <div class="card-content">
+          <h3>Kalanggaman Island</h3>
+          <p>White sandy beaches and crystal clear waters.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="pic1.jpg" alt="Liap-aliap Falls">
+        <div class="card-content">
+          <h3>Liap-aliap Falls</h3>
+          <p>Serene waterfalls surrounded by lush forests.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="pic1.jpg" alt="Biri Rock Formations">
+        <div class="card-content">
+          <h3>Biri Rock Formations</h3>
+          <p>Dramatic rock formations shaped by centuries of waves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <img id="gallery-img" src="pic1.jpg" alt="Gallery">
+    <div class="controls">
+      <button onclick="prevImage()">Previous</button>
+      <button onclick="nextImage()">Next</button>
+    </div>
+  </section>
+
+<section id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact-container" style="display: flex; gap: 20px; flex-wrap: wrap;">
+
+    <!-- Contact Form -->
+<form action="https://formsubmit.co/athenaflores987@gmail.com" method="POST" style="flex: 1; min-width: 300px;">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="text" name="name" placeholder="Your Name" required>
+  <input type="email" name="email" placeholder="Your Email" required>
+  <input type="text" name="number" placeholder="Contact Number" required>
+  <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+    <!-- Embedded Google Map with pin icons -->
+    <div style="position: relative; flex: 1; min-width: 300px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125478.02664669727!2d124.47420665088337!3d12.515392282698845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x330826542f1a2fcd%3A0xf29611fc8c2578cb!2sNorthern%20Samar!5e0!3m2!1sen!2sph!4v1715074012345!5m2!1sen!2sph"
+        width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <!-- Pin Icon Buttons -->
+      <button onclick="showLocationInfo('loc1')" title="Beach Paradise"
+        style="position: absolute; top: 30%; left: 40%; background: transparent; border: none; font-size: 24px; cursor: pointer;">
+        📍
+      </button>
+      <button onclick="showLocationInfo('loc2')" title="Mountain View Camp"
+        style="position: absolute; top: 65%; left: 65%; background: transparent; border: none; font-size: 24px; cursor: pointer;">
+        📍
+      </button>
+    </div>
+  </div>
+
+  <!-- Location Info Popups -->
+  <div class="location-info" id="loc1">
+    <button onclick="this.parentElement.classList.remove('active')" class="close-btn">✖</button>
+    <h4>Beach Paradise</h4>
+    <p><strong>Address:</strong> Imaga Rock Formation, Allen</p>
+    <p><strong>Contact:</strong> 0917-123-4567</p>
+    <p><strong>Description:</strong> A stunning coastal rock formation known for its natural sculptural beauty and panoramic ocean views.</p>
+    <img src="pic1.jpg" alt="Location 1" style="width:100%; border-radius:8px;">
+    <p><a href="https://facebook.com/beachparadise" target="_blank">Facebook Page</a></p>
+  </div>
+
+  <div class="location-info" id="loc2">
+    <button onclick="this.parentElement.classList.remove('active')" class="close-btn">✖</button>
+    <h4>Mountain View Camp</h4>
+    <p><strong>Address:</strong> Sitio Bundok, Catarman</p>
+    <p><strong>Contact:</strong> 0999-888-7777</p>
+    <p><strong>Description:</strong> A peaceful hilltop spot perfect for sunrise viewing and scenic countryside photography.</p>
+    <img src="pic1.jpg" alt="Location 2" style="width:100%; border-radius:8px;">
+    <p><a href="https://facebook.com/mountaincamp" target="_blank">Facebook Page</a></p>
+  </div>
+</section>
+
+
+  <footer>
+    <p>&copy; 2025 SIPAT Northern Samar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Toggle mobile menu
+    function toggleMenu() {
+      const navUl = document.querySelector('nav ul');
+      navUl.style.display =
+        navUl.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Gallery slider logic
+    const images = ['pic1.jpg', 'pic3.jpg', 'pic4.jpg', 'pic5.jpg'];
+    let currentIndex = 0;
+    function showImage(i) {
+      document.getElementById('gallery-img').src = images[i];
+    }
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    // Contact form submission
+  function submitForm(event) {
+    event.preventDefault();
+    alert("Message Sent!");
+  }
+
+  function showLocationInfo(id) {
+    document.querySelectorAll('.location-info').forEach(info => info.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+
+    // Header scroll effect + stickiness
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 80) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>
